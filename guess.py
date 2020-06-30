@@ -24,7 +24,7 @@ while (attempts < 4):
         if attempts == 2:
             print('One more try')
         elif attempts < 3:
-            print('Give it another go!')
+            print('Nope... Give it another go!')
         else:
-            print('No more tries. Reload Game')
+            print('Nope... No more tries. Reload Game')
     attempts += 1
