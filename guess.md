@@ -6,12 +6,9 @@ The following are valid ways to run the script:
 
 1. The first form takes zero command line arguments and defaults to the built-in range 0 - 10.
 
-
     `python guess.py`
 
-
-
-2. The second form takes 1 command line argument and uses the passed value as the upper limit. The example below assumes the range 0 - 20
+2. The second form takes 1 command line argument and uses that single value as the upper limit while the lower limit defaults to 0. The example below assumes the range 0 - 20
 
      `python guess.py 20`
 
@@ -20,3 +17,5 @@ The following are valid ways to run the script:
     `python guess.py 0 100`
 
 Any other form e.g. lower value larger than upper value `python guess.py 20 10` or more than 2 command line arguments being passed `python guess.py 0 10 20` will be invalid and the script defaults to the internal range 0 - 10.
+
+I will be updating this script to add more fun little pieces of functionality....
