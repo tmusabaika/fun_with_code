@@ -1,4 +1,5 @@
 import random
+import sys
 
 def check_guess(response, challenge):
     if int(response) == challenge:
@@ -15,7 +16,32 @@ def check_variance(response, challenge):
     else:
         return ''
 
-random_num = random.randint(0, 10)
+print(len(sys.argv))
+
+if len(sys.argv) == 2:
+    lower = 0
+    upper = sys.argv[1]
+elif len(sys.argv) == 3:
+    if int(sys.argv[1]) > int(sys.argv[2]):
+        print('Undefined range (range start value is bigger than range end value). Using default range')
+        lower = 0
+        upper = 10
+    else:
+        lower = sys.argv[1]
+        upper = sys.argv[2]
+elif len(sys.argv) == 1:
+    print('No range defined. Using default range')
+    lower = 0
+    upper = 10
+else:
+    print('Invalid arguments. Enter at most 2 number (lower and upper values). Using default range')
+    lower = 0
+    upper = 10
+
+print('Lower: ' + str(lower))
+print('Upper: ' + str(upper))
+
+random_num = random.randint(int(lower), int(upper))
 attempts = 1
 
 #print(random_num)
@@ -24,7 +50,7 @@ while (attempts <= 3):
     
     print('\n'+'*'*10)
     print('Attempt ' + str(attempts) + '\n')
-    guess = input('Guess a number between 0 and 10: \n')
+    guess = input('Guess a number between ' + str(lower) + ' and ' + str(upper) + ': \n')
     result = check_guess(guess, random_num)
     if result == 0:
         print('You guessed it!')
