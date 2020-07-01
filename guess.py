@@ -18,9 +18,9 @@ def check_variance(response, challenge):
 random_num = random.randint(0, 10)
 attempts = 1
 
-print(random_num)
+#print(random_num)
 
-while (attempts < 4):
+while (attempts <= 3):
     
     print('\n'+'*'*10)
     print('Attempt ' + str(attempts) + '\n')
@@ -36,5 +36,5 @@ while (attempts < 4):
         elif attempts < 3:
             print('Give it another go!')
         else:
-            print('No more tries. Reload Game')
+            print('No more tries. The answer was ' + str(random_num) + '. Reload Game')
     attempts += 1
